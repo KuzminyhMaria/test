@@ -12,24 +12,12 @@ let initialState = {
 const FReducer = (state = initialState, action) => {
     switch(action.type) {
         case ADD_OPTION:
-            /* let newCity = {
-                id: 0,
-                city: "",
-            };
             if(state.newSelectedCity !== "") {
-                newCity = {
-                    id: state.index,
-                    city: state.newSelectedCity,
-                }
-                state.index++; */
                 state.selectedCities.push(state.newSelectedCity);
                 state.newSelectedCity = '';
+            }
             return state;
         case DELETE_OPTION:
-
-            /* if(state.selectedCities.length === 1) {
-                state.selectedCities.pop();
-            } else*/
             let index = state.selectedCities.findIndex(el => el === action.dChoose);
             state.selectedCities.splice(index, 1);
             return state;
